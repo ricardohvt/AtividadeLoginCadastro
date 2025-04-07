@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.text {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+form {
+    justify-content: center;
+    align-content: center;
+}
+
+input, a {
+    margin: 10px;
+    border-radius: 3px;
+    border-color: rgba(117, 117, 117, 0.158);
+}
+
+.button {
+    margin: 10px;
+    border-radius: 3px;
+    border-color: rgba(117, 117, 117, 0.158);
+}
