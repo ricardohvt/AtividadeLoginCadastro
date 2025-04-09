@@ -14,11 +14,18 @@
                 <h1>Recuperação de senha</h1>
             </div>
             <hr>
-            <input type="text" name="" id="input-user" placeholder="username"><br>
             <!-- <input type="button" value="Tenho apenas o E-mail" onclick="change()"><br> -->
-            <input type="email" name="email" id="input-email" class="input-email" placeholder="E-mail"><br>
+            <label for="password">
+                <p>Digite a nova senha para redefinir:</p>
+                <input required type="password" name="password" id="input-password" class="input-password" placeholder="Senha"><br>
+            </label>
+            <label for="password-confirm">
+                <p>Digite novamente sua senha para confirmar:</p>
+                <input required type="password" name="password-confirm" id="input-password-confirm" class="input-password-confirm" placeholder="Confirmar senha"><br>
+            </label>
+            <hr>
             <!-- <input type="button" value="Enviar E-mail de recuperação" placeholder="Cadastrar" onclick="redirect()"> -->
-            <a href="login.html" class="button">Enviar email de recuperação</a>
+            <a href="login.html" class="button">Redefinir senha</a>
         </form>
     </section>
     <!-- <script>
@@ -40,7 +47,6 @@
         function redirect(){
             window.location.href = "login.html";
         }
-        console.log("Feito por: Ricardo Henrique Vieira Tomba")
     </script> -->
 </body>
 </html>

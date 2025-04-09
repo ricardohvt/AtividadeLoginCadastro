@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+
 body {
     display: flex;
     justify-content: center;
@@ -12,11 +14,37 @@ body {
     text-align: center;
 }
 
+html {
+    font-size: 20px;
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+}
+
+.links {
+    margin: 0;
+    display: block;
+    width: 100%;
+    margin: 10px;
+}
+
+p {
+    margin: 0;
+}
+ 
+hr {
+    width: 98%;
+}
+
 a {
     text-decoration: none;
-    margin: 10px;
     border-radius: 3px;
     color: black;
+}
+
+label {
+    width: 100%;
 }
 
 section {
@@ -34,11 +62,13 @@ form {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(16px) saturate(180%);
     border-radius: 15px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.42) 80%;
 }
 
 input {
     margin: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid rgba(117, 117, 117, 0.158);
     padding: 8px;
 }
@@ -52,6 +82,10 @@ input {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.button::hover {
+    transform: scale(5px);
 }
 
 .button:hover {
