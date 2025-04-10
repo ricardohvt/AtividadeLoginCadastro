@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Author" content="Ricardo Henrique Vieira Tomba">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="env">
+        <form action="indefinido">
+            <div class="text">
+                <h1>Recuperação de senha</h1>
+            </div>
+            <hr>
+            <label for="number">
+                <p>Coloque o Código para ir redefinir a senha:</p>
+                <input required type="number" name="number" id="input-number" class="input-number" placeholder="Código" maxlength="4"><br>
+            </label>
+            <hr>
+            <a href="rec.php" class="button">Prosseguir</a>
+        </form>
+    </section>
+    </body>
+</html>

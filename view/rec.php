@@ -25,7 +25,7 @@
             </label>
             <hr>
             <!-- <input type="button" value="Enviar E-mail de recuperação" placeholder="Cadastrar" onclick="redirect()"> -->
-            <a href="login.html" class="button">Redefinir senha</a>
+            <a href="login.php" class="button">Redefinir senha</a>
         </form>
     </section>
     <!-- <script>

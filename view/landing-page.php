@@ -8,9 +8,9 @@
 </head>
 <body>
     <section>
-        <a href="login.html" class="button">Login</a>
-        <a href="cadastro.html" class="button">Cadastro</a>
-        <a href="rec-usuario.html" class="button">Recuperação</a>
+        <a href="login.php" class="button">Login</a>
+        <a href="cadastro.php" class="button">Cadastro</a>
+        <a href="rec-usuario.php" class="button">Recuperação</a>
         <a href="auth.pdf" class="button">Fluxo</a>
     </section>
 </body>
