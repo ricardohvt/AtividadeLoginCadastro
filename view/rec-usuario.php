@@ -19,6 +19,9 @@
                 <input required type="text" name="username" id="input-username" class="input-username" placeholder="Nome de usuário"><br>
             </label>
             <hr>
+            <div class="button-main">
+                <button class="button-submit">Prosseguir</button>
+            </div>
             <a href="rec-codigo.php" class="button">Prosseguir</a>
         </form>
     </section>

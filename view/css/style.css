@@ -14,13 +14,13 @@ body {
     text-align: center;
 }
 
-html {
+/* html {
     font-size: 20px;
     font-family: "Cormorant", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: bold;
-}
+} */
 
 .links {
     margin: 0;
@@ -81,13 +81,20 @@ input {
     background-color: #2a2a2a;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .button::hover {
     transform: scale(5px);
 }
 
-.button:hover {
-    background-color: #444;
+button {
+    margin: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(117, 117, 117, 0.158);
+    padding: 8px 16px;
+    background-color: #2a2a2a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
 }

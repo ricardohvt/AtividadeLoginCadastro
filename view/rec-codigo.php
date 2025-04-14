@@ -16,9 +16,12 @@
             <hr>
             <label for="number">
                 <p>Coloque o Código para ir redefinir a senha:</p>
-                <input required type="number" name="number" id="input-number" class="input-number" placeholder="Código" maxlength="4"><br>
+                <input required type="number" name="code-number" id="input-number" class="input-number" placeholder="Código" maxlength="4"><br>
             </label>
             <hr>
+            <div class="button-main">
+                <button class="button-submit">Prosseguir</button>
+            </div>
             <a href="rec.php" class="button">Prosseguir</a>
         </form>
     </section>

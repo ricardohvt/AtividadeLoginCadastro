@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="env">
-        <form action="indefinido">
+        <form action="../controller/AuthController.php">
             <div class="text">
                 <h1>Login</h1>
             </div>
@@ -29,6 +26,9 @@
             <div class="links">
                 <a href="rec-usuario.php">Esqueci minha senha</a><br>
                 <a href="cadastro.php">Ainda não possui cadastro?</a><br>
+            </div>
+            <div class="button-main">
+                <button class="button-submit">Login</button>
             </div>
             <!-- <input type="button" value="Login" placeholder="Login" onclick="redirect()"> -->
             <a href="landing-page.php" class="button">Login</a>
