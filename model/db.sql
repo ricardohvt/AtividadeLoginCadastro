@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/04/2025 às 15:23
+-- Tempo de geração: 24/04/2025 às 15:30
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,9 +41,15 @@ CREATE TABLE `code` (
 
 CREATE TABLE `pessoa` (
   `pessoaID` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `nome` int(11) NOT NULL
+  `full_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `pessoa`
+--
+
+INSERT INTO `pessoa` (`pessoaID`, `full_name`) VALUES
+(18, 'ricardo tomba');
 
 -- --------------------------------------------------------
 
@@ -54,9 +60,17 @@ CREATE TABLE `pessoa` (
 CREATE TABLE `user` (
   `userID` int(11) NOT NULL,
   `username` varchar(120) NOT NULL,
-  `password` varchar(60) NOT NULL,
+  `email` varchar(130) NOT NULL,
+  `password_main` varchar(60) NOT NULL,
   `pessoaID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `user`
+--
+
+INSERT INTO `user` (`userID`, `username`, `email`, `password_main`, `pessoaID`) VALUES
+(6, 'ricardo', 'ricardo@gmail.com', '$2y$10$DhJnVaea6LapGB9TDNnOZejkKS3Ma.Zyk7hhUV/NzG8t/maPUKbqq', 18);
 
 --
 -- Índices para tabelas despejadas
@@ -95,13 +109,13 @@ ALTER TABLE `code`
 -- AUTO_INCREMENT de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `pessoaID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pessoaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para tabelas despejadas

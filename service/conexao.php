@@ -1,11 +1,11 @@
 <?php
  
-class UsePDO
+class usePDO
 {
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $dbname = "login";
+    private $dbname = "db";
     private $instance;
  
     function getInstance()

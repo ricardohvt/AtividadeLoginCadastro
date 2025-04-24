@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,5 +13,16 @@
         <a href="rec-usuario.php" class="button">Recuperação</a>
         <a href="assets/auth.pdf" class="button">Fluxo</a>
     </section>
+
+    <div class="check">
+        <?php
+            session_start();
+            if (isset($_SESSION['user'])) {
+                echo "Você está logado, " . ($_SESSION['user']['username']) . "!";
+            } else {
+                echo "Você não está logado!";
+            }
+        ?>
+    </div>
 </body>
 </html>

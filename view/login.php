@@ -9,7 +9,7 @@
 </head>
 <body>
     <section class="env">
-        <form action="../controller/AuthController.php">
+        <form action="../controller/AuthController.php" method="POST">
             <div class="text">
                 <h1>Login</h1>
             </div>
@@ -27,11 +27,8 @@
                 <a href="rec-usuario.php">Esqueci minha senha</a><br>
                 <a href="cadastro.php">Ainda não possui cadastro?</a><br>
             </div>
-            <div class="button-main">
-                <button class="button-submit">Login</button>
-            </div>
-            <!-- <input type="button" value="Login" placeholder="Login" onclick="redirect()"> -->
-            <a href="landing-page.php" class="button">Login</a>
+            <button type="submit">Login</button>
+            <a href="landing-page.php" class="button">Login1</a>
         </form>
     </section>
 </body>
