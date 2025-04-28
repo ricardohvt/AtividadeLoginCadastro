@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/04/2025 às 15:30
+-- Tempo de geração: 28/04/2025 às 21:24
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.1.25
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `code` (
   `codeID` int(11) NOT NULL,
-  `code` int(4) NOT NULL,
-  `username` varchar(120) NOT NULL
+  `username` varchar(120) NOT NULL,
+  `code` varchar(6) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `lido` int(11) NOT NULL,
+  `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `code`
+--
+
+INSERT INTO `code` (`codeID`, `username`, `code`, `email`, `lido`, `userID`) VALUES
+(1, 'Ricardo', '7000', 'ricardohenriquevt@gmail.com', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -49,7 +59,7 @@ CREATE TABLE `pessoa` (
 --
 
 INSERT INTO `pessoa` (`pessoaID`, `full_name`) VALUES
-(18, 'ricardo tomba');
+(40, 'Ricardo Henrique Vieira Tomba');
 
 -- --------------------------------------------------------
 
@@ -70,7 +80,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `username`, `email`, `password_main`, `pessoaID`) VALUES
-(6, 'ricardo', 'ricardo@gmail.com', '$2y$10$DhJnVaea6LapGB9TDNnOZejkKS3Ma.Zyk7hhUV/NzG8t/maPUKbqq', 18);
+(1, 'Ricardo', 'ricardohenriquevt@gmail.com', '$2y$10$Lbu.Cxx.I463AoAmojce3.kPE5W473i/KZivguyG.F18rivuPps56', 40);
 
 --
 -- Índices para tabelas despejadas
@@ -80,7 +90,8 @@ INSERT INTO `user` (`userID`, `username`, `email`, `password_main`, `pessoaID`) 
 -- Índices de tabela `code`
 --
 ALTER TABLE `code`
-  ADD PRIMARY KEY (`codeID`);
+  ADD PRIMARY KEY (`codeID`),
+  ADD KEY `UserID-Link` (`userID`);
 
 --
 -- Índices de tabela `pessoa`
@@ -103,19 +114,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `code`
 --
 ALTER TABLE `code`
-  MODIFY `codeID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `pessoaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pessoaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas

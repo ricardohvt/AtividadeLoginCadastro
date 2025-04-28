@@ -31,6 +31,10 @@
                     echo "<div style='color: red;'>" . $_SESSION['login_error'] . "</div>";
                     unset($_SESSION['login_error']);
                 }
+                if (!empty($_SESSION['errcode_reg'])) {
+                    echo $_SESSION['errcode_reg'];
+                    unset($_SESSION['errcode_reg']);
+                }
             ?>
             </div>
             <div class="links">
@@ -38,7 +42,6 @@
                 <a href="cadastro.php">Ainda não possui cadastro?</a><br>
             </div>
             <button type="submit">Login</button>
-            
         </form>
     </section>
 </body>

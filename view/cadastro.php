@@ -37,11 +37,17 @@
                 <input required type="password" name="confirm_password" id="input-password-confirm" class="input-password" placeholder="Confirmar senha"><br>
             </label>
             <hr>
+            <?php
+                session_start();
+
+                if (!empty($_SESSION['errcode_reg'])) {
+                    echo $_SESSION['errcode_reg'];
+                    unset($_SESSION['errcode_reg']);
+                }
+            ?>
             <div class="button-main">
                 <button class="button-submit">Cadastrar</button>
             </div>
-            <!-- <a href="login.php" class="button">Cadastrar</a> -->
-             <!--     $confirmpassword = $_POST['confirm_password']; -->
         </form>
     </section>
 </body>

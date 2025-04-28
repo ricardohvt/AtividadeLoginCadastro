@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require '../model/AuthModel.php';
 
@@ -14,9 +15,10 @@ if ($_POST) {
         header("Location: ../view/landing-page.php");
         exit;
     } else {
-        $_SESSION['login_error'] = "Senha ou email estão errados!";
+        $_SESSION['login_error'] = "Email ou senha estão errados!";
         header("Location: ../view/login.php");
         exit;
     }
 }
+
 ?>

@@ -1,7 +1,7 @@
 <?php
 // Incluir arquivos de conexão e funções
 require_once '../service/conexao.php';
-require_once '../model/funcoes.php';
+require_once '../model/FuncaoModel.php';
 
 $conexao = instance2();
 
