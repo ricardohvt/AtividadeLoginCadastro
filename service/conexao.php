@@ -24,9 +24,23 @@ class usePDO
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         } catch (PDOException $e) {
-            // echo "connection failed: " . $e->getMessage() . "<br>";
             die("Connection failed: " . $e->getMessage() . "<br>");
         }
     }
 }
- 
+
+function instance2(){
+    $servidor = "localhost";
+    $usuario = "root";
+    $senha = "";
+    $banco = "db";
+    $conexao = new mysqli($servidor, $usuario, $senha, $banco);
+    
+    if ($conexao->connect_error) {
+        die("Falha na conexão: " . $conexao->connect_error);
+    }
+    
+    
+    $conexao->set_charset("utf8");
+    return $conexao;
+}

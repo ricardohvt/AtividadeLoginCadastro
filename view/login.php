@@ -23,12 +23,22 @@
                 <input required type="password" name="password" id="input-password" class="input-password" placeholder="Senha"><br>
             </label>
             <hr>
+            <div class="login-check">
+            <?php
+                session_start();
+
+                if (!empty($_SESSION['login_error'])) {
+                    echo "<div style='color: red;'>" . $_SESSION['login_error'] . "</div>";
+                    unset($_SESSION['login_error']);
+                }
+            ?>
+            </div>
             <div class="links">
                 <a href="rec-usuario.php">Esqueci minha senha</a><br>
                 <a href="cadastro.php">Ainda não possui cadastro?</a><br>
             </div>
             <button type="submit">Login</button>
-            <a href="landing-page.php" class="button">Login1</a>
+            
         </form>
     </section>
 </body>
