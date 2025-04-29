@@ -1,5 +1,5 @@
 <?php
-// Incluir arquivos de conexão e funções
+
 require_once '../service/conexao.php';
 require_once '../model/FuncaoModel.php';
 
@@ -7,15 +7,17 @@ $conexao = instance2();
 
 // Inicializar variáveis
 $emailSelecionado = null;
+$idSelecionado = null;
 $emails = buscarEmails($conexao);
 
 // Verificar se um email foi selecionado
 if (isset($_GET['id'])) {
-    $id = isset($_GET['id']) ? $_GET['id'] : null;
+    $id = $_GET['id'];
     $emailSelecionado = buscarEmailPorId($conexao, $id);
     
     // Marcar como lido se encontrado
     if ($emailSelecionado) {
+        $idSelecionado = isset($emailSelecionado['id']) ? $emailSelecionado['id'] : null;
         marcarComoLido($conexao, $id);
     }
 }
@@ -36,46 +38,46 @@ if (isset($_GET['id'])) {
             height: 100%;
             overflow-x: hidden;
         }
-        
+
         .email-container {
             height: calc(100vh - 56px);
         }
-        
+
         .email-list {
             height: 100%;
             overflow-y: auto;
             background-color: #f8f9fa;
             border-right: 1px solid #dee2e6;
         }
-        
+
         .email-detail {
             height: 100%;
             overflow-y: auto;
         }
-        
+
         .email-item {
             cursor: pointer;
             padding: 15px;
             border-bottom: 1px solid #dee2e6;
         }
-        
+
         .email-item:hover {
             background-color: #f1f3f5;
         }
-        
+
         .email-item.active {
             background-color: #0d6efd;
             color: white;
         }
-        
+
         .email-item.active .text-muted {
             color: rgba(255, 255, 255, 0.75) !important;
         }
-        
+
         .email-item.unread {
             font-weight: bold;
         }
-        
+
         .unread-indicator {
             display: inline-block;
             width: 10px;
@@ -84,7 +86,7 @@ if (isset($_GET['id'])) {
             background-color: #0d6efd;
             margin-right: 8px;
         }
-        
+
         .empty-state {
             display: flex;
             flex-direction: column;
@@ -93,12 +95,12 @@ if (isset($_GET['id'])) {
             height: 100%;
             color: #6c757d;
         }
-        
+
         @media (max-width: 767.98px) {
             .email-container {
                 height: auto;
             }
-            
+
             .email-list, .email-detail {
                 height: auto;
                 max-height: 100vh;
@@ -124,7 +126,7 @@ if (isset($_GET['id'])) {
                 <?php else: ?>
                     <?php foreach ($emails as $email): ?>
                         <a href="?id=<?php echo $email['codeID']; ?>" class="text-decoration-none">
-                            <div class="email-item <?php echo ($emailSelecionado && $emailSelecionado['id'] == $email['id']) ? 'active' : ''; ?> <?php echo $email['lido'] ? '' : 'unread'; ?>">
+                            <div class="email-item <?php echo ($idSelecionado !== null && $idSelecionado == $email['id']) ? 'active' : ''; ?> <?php echo $email['lido'] ? '' : 'unread'; ?>">
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div class="ms-2 me-auto">
                                         <div class="d-flex align-items-center mb-1">
@@ -133,11 +135,11 @@ if (isset($_GET['id'])) {
                                             <?php endif; ?>
                                             <span><?php echo htmlspecialchars($email['email']); ?></span>
                                         </div>
-                                        <div class="<?php echo ($emailSelecionado && $emailSelecionado['id'] == $email['id']) ? '' : 'text-muted'; ?> small">
+                                        <div class="<?php echo ($idSelecionado !== null && $idSelecionado == $email['id']) ? '' : 'text-muted'; ?> small">
                                             <?php echo htmlspecialchars('Recuperação de senha!'); ?>
                                         </div>
                                     </div>
-                                    <small class="<?php echo ($emailSelecionado && $emailSelecionado['id'] == $email['id']) ? '' : 'text-muted'; ?>">
+                                    <small class="<?php echo ($idSelecionado !== null && $idSelecionado == $email['id']) ? '' : 'text-muted'; ?>">
                                         <?php echo formatarData("Teste"); ?>
                                     </small>
                                 </div>
@@ -169,7 +171,7 @@ Equipe de Atendimento"); ?></span>
                             <div class="card-header bg-light">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                    <strong>De:</strong> <?php echo htmlspecialchars($emailSelecionado['email']); ?>
+                                        <strong>De:</strong> <?php echo htmlspecialchars($emailSelecionado['email']); ?>
                                     </div>
                                     <div>
                                         <span class="badge bg-secondary">Código: <?php echo htmlspecialchars($emailSelecionado['code']); ?></span>
@@ -198,7 +200,7 @@ Equipe de Atendimento")); ?></p>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p>
-                                        <strong>Usuário:</strong> <?php echo htmlspecialchars($emailSelecionado['email']); ?>
+                                            <strong>Usuário:</strong> <?php echo htmlspecialchars($emailSelecionado['email']); ?>
                                         </p>
                                     </div>
                                     <div class="col-md-6">

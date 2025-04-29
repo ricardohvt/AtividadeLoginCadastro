@@ -9,7 +9,7 @@ function register($email, $fullname, $username, $password, $confirmpassword){
         header('Location: ../view/cadastro.php');
         exit;
     }else{
-        $code = mt_rand(0,999999); // o motivo do MT_RAND é pq pesquisei como usar o rand normal e vi em alguns lugares que falava sobre o mt_rand, achei que vinha do multithreading, mas vi que era mais seguro.
+        $code = mt_rand(000000,999999); // o motivo do MT_RAND é pq pesquisei como usar o rand normal e vi em alguns lugares que falava sobre o mt_rand, achei que vinha do multithreading, mas vi que era mais seguro.
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         
         $sql = "INSERT INTO pessoa (full_name) VALUES (?)";
@@ -32,4 +32,4 @@ function register($email, $fullname, $username, $password, $confirmpassword){
         
         return $idPessoa;
     }
-    }
+}

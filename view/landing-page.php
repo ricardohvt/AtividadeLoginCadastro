@@ -8,6 +8,7 @@
 </head>
 <body>
     <section>
+        <a href="dashboard.php" class="button">Dashboard</a>
         <a href="login.php" class="button">Login</a>
         <a href="cadastro.php" class="button">Cadastro</a>
         <a href="rec-usuario.php" class="button">Recuperação</a>
