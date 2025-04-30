@@ -26,7 +26,7 @@
             <div class="button-main">
                 <button class="button-submit">Redefinir senha</button>
             </div>
-            <a href="login.php" class="button">Redefinir senha</a>
+
         </form>
     </section>
 </body>

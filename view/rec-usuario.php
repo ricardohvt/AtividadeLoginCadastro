@@ -9,20 +9,27 @@
 </head>
 <body>
     <section class="env">
-        <form action="indefinido">
+        <form action="../controller/RecuperacaoEmailController.php" method="POST">
             <div class="text">
                 <h1>Recuperação de senha</h1>
             </div>
             <hr>
-            <label for="username">
-                <p>Nome de usuário:</p>
-                <input required type="text" name="username" id="input-username" class="input-username" placeholder="Nome de usuário"><br>
+            <label for="email">
+                <p>Email:</p>
+                <input required type="email" name="email" id="input-username" class="input-username" placeholder="Nome de usuário"><br>
             </label>
             <hr>
+        <?php
+                session_start();
+
+                if (!empty($_SESSION['recuperacaoem_error'])) {
+                    echo $_SESSION['recuperacaoem_error'];
+                    unset($_SESSION['recuperacaoem_error']);
+                }
+            ?>
             <div class="button-main">
                 <button class="button-submit">Prosseguir</button>
             </div>
-            <a href="rec-codigo.php" class="button">Prosseguir</a>
         </form>
     </section>
 </body>

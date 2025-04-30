@@ -159,7 +159,7 @@ if (isset($_GET['id'])) {
 
 Seu novo código de acesso é:
 
-🔐 Código de Acesso: JKL012
+🔐 Código de Acesso: JKL012 " .  htmlspecialchars($emailSelecionado['code']) . "
 
 Por motivos de segurança, recomendamos que você mantenha este código em local seguro. Em caso de dúvidas ou dificuldades, nossa equipe está pronta para ajudar.
 
@@ -183,7 +183,7 @@ Equipe de Atendimento"); ?></span>
 
 Seu novo código de acesso é:
 
-🔐 Código de Acesso: JKL012
+🔐 Código de Acesso: ".  htmlspecialchars($emailSelecionado['code']) . "
 
 Por motivos de segurança, recomendamos que você mantenha este código em local seguro. Em caso de dúvidas ou dificuldades, nossa equipe está pronta para ajudar.
 
@@ -223,6 +223,6 @@ Equipe de Atendimento")); ?></p>
     </div>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>                                                                                                                                                                                                                                     <script>console.log("Saudades de vc Jean ♥")</script>
 </body>
 </html>
