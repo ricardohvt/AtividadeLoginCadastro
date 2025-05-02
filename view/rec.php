@@ -9,24 +9,23 @@
 </head>
 <body>
     <section class="env">
-        <form action="indefinido">
-            <div class="text">
-                <h1>Recuperação de senha</h1>
-            </div>
-            <hr>
+        <?php
+        session_start();
+        if (!empty($_SESSION['redefinir_senha_error'])) {
+            echo "<div style='color: red;'>" . $_SESSION['redefinir_senha_error'] . "</div>";
+            unset($_SESSION['redefinir_senha_error']);
+        }
+        ?>
+        <form action="../controller/RedefinirSenhaController.php" method="POST">
             <label for="password">
-                <p>Digite a nova senha para redefinir:</p>
-                <input required type="password" name="password" id="input-password" class="input-password" placeholder="Senha"><br>
+                <p>Digite a nova senha:</p>
+                <input required type="password" name="password" placeholder="Nova senha"><br>
             </label>
             <label for="password-confirm">
-                <p>Digite novamente sua senha para confirmar:</p>
-                <input required type="password" name="password-confirm" id="input-password-confirm" class="input-password-confirm" placeholder="Confirmar senha"><br>
+                <p>Confirme a nova senha:</p>
+                <input required type="password" name="password-confirm" placeholder="Confirmar senha"><br>
             </label>
-            <hr>
-            <div class="button-main">
-                <button class="button-submit">Redefinir senha</button>
-            </div>
-
+            <button type="submit">Redefinir senha</button>
         </form>
     </section>
 </body>

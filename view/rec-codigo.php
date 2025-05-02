@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <?php
+    session_start();
+    if (!empty($_SESSION['recuperacao_codigo_error'])) {
+        echo "<div style='color: red;'>" . $_SESSION['recuperacao_codigo_error'] . "</div>";
+        unset($_SESSION['recuperacao_codigo_error']);
+    }
+    ?>
     <section class="env">
         <form action="../controller/RecuperacaoCodigoController.php" method="POST">
-            <div class="text">
-                <h1>Recuperação de senha</h1>
-            </div>
-            <hr>
             <label for="number">
-                <p>Coloque o Código para ir redefinir a senha:</p>
-                <input required type="number" name="codigo" id="input-number" class="input-number" placeholder="Código" maxlength="4"><br>
+                <p>Coloque o Código para redefinir a senha:</p>
+                <input required type="number" name="codigo" placeholder="Código" maxlength="6"><br>
             </label>
-            <hr>
-            <div class="button-main">
-                <button class="button-submit">Prosseguir</button>
-            </div>
+            <button type="submit">Prosseguir</button>
         </form>
     </section>
     </body>

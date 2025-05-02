@@ -4,9 +4,10 @@ require '../model/RecuperacaoCodigoModel.php';
 
 if ($_POST) {
     $codigo = $_POST['codigo'];
+    $email = $_SESSION['emailrec']['email'];
     $recuperacao = new RecuperacaoCodigo();
 
-    if ($recuperacao->validarCodigo($codigo)) {
+    if ($recuperacao->validarCodigo($codigo, $email)) {
         $_SESSION['codigo_valido'] = true;
         header('Location: ../view/rec.php');
         exit;
