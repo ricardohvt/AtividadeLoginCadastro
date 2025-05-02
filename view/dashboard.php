@@ -106,12 +106,16 @@ if (isset($_GET['id'])) {
                 max-height: 100vh;
             }
         }
+        .h4:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="bg-primary text-white p-3">
-        <h1 class="h4 m-0">Email Dashboard</h1>
+        <h1 class="h4 m-0" onclick="redirect_window()">Email Dashboard</h1>
     </header>
 
     <!-- Main Content -->
@@ -221,7 +225,11 @@ Equipe de Atendimento")); ?></p>
             </div>
         </div>
     </div>
-
+    <script>
+        function redirect_window() {
+            window.location.href = "../view/index.php";
+        }
+    </script>
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>                                                                                                                                                                                                                                     <script>console.log("Saudades de vc Jean ♥")</script>
 </body>
