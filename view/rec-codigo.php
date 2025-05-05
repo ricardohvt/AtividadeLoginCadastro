@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php
-    session_start();
-    if (!empty($_SESSION['recuperacao_codigo_error'])) {
-        echo "<div style='color: red;'>" . $_SESSION['recuperacao_codigo_error'] . "</div>";
-        unset($_SESSION['recuperacao_codigo_error']);
-    }
-    ?>
     <section class="env">
         <form action="../controller/RecuperacaoCodigoController.php" method="POST">
             <label for="number">
@@ -22,6 +15,13 @@
                 <input required type="number" name="codigo" placeholder="Código" maxlength="6"><br>
             </label>
             <button type="submit">Prosseguir</button>
+        <?php
+            session_start();
+            if (!empty($_SESSION['recuperacao_codigo_error'])) {
+                echo "<div style='color: red;'>" . $_SESSION['recuperacao_codigo_error'] . "</div>";
+                unset($_SESSION['recuperacao_codigo_error']);
+            }
+        ?>
         </form>
     </section>
     </body>

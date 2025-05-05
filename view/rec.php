@@ -9,13 +9,6 @@
 </head>
 <body>
     <section class="env">
-        <?php
-        session_start();
-        if (!empty($_SESSION['redefinir_senha_error'])) {
-            echo "<div style='color: red;'>" . $_SESSION['redefinir_senha_error'] . "</div>";
-            unset($_SESSION['redefinir_senha_error']);
-        }
-        ?>
         <form action="../controller/RedefinirSenhaController.php" method="POST">
             <label for="password">
                 <p>Digite a nova senha:</p>
@@ -26,6 +19,13 @@
                 <input required type="password" name="password-confirm" placeholder="Confirmar senha"><br>
             </label>
             <button type="submit">Redefinir senha</button>
+        <?php
+        session_start();
+        if (!empty($_SESSION['redefinir_senha_error'])) {
+            echo "<div style='color: red;'>" . $_SESSION['redefinir_senha_error'] . "</div>";
+            unset($_SESSION['redefinir_senha_error']);
+        }
+        ?>
         </form>
     </section>
 </body>
