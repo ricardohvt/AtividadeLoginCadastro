@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/05/2025 às 16:13
+-- Tempo de geração: 05/05/2025 às 13:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -36,17 +36,6 @@ CREATE TABLE `code` (
   `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `code`
---
-
-INSERT INTO `code` (`codeID`, `username`, `code`, `email`, `lido`, `userID`) VALUES
-(7, 'aaaa', '631072', 'ricardohenriquevt@gmail.com', 0, 8),
-(8, 'a', '377602', 'ricardohenrique@sescpr.coc.com.br', 0, 9),
-(9, 'Super Tomcat', '111944', 'supertomcat21@protonmail.com', 0, 10),
-(10, 'e', '268386', 'a@a.com', 0, 11),
-(11, 'e', '202926', 'a@a.com', 0, 12);
-
 -- --------------------------------------------------------
 
 --
@@ -57,20 +46,6 @@ CREATE TABLE `pessoa` (
   `pessoaID` int(11) NOT NULL,
   `full_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `pessoa`
---
-
-INSERT INTO `pessoa` (`pessoaID`, `full_name`) VALUES
-(44, 'Ricardo Henrique Vieira Tomba'),
-(45, 'Ricardo Henrique Vieira Tomba'),
-(46, 'Ricardo Henrique Vieira Tomba'),
-(47, 'Ricardo Henrique Vieira Tomba'),
-(48, 'aaaaaaaaaaaa'),
-(49, 'F14D Super Tomcat'),
-(50, 'AAA'),
-(51, 'AAA');
 
 -- --------------------------------------------------------
 
@@ -85,20 +60,6 @@ CREATE TABLE `user` (
   `password_main` varchar(60) NOT NULL,
   `pessoaID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `user`
---
-
-INSERT INTO `user` (`userID`, `username`, `email`, `password_main`, `pessoaID`) VALUES
-(5, 'Ricardo', 'ricardohenriquevt@gmail.com', '$2y$10$KYrjmyTbJ9RyiW0h7AhpR.AghHaoRJwfBHMH6ArJjy54mIZO7eWjK', 44),
-(6, 'Ricardo', 'ricardohenriquevt@gmail.com', '$2y$10$w.Nxxq0/gc3jg4RW9EndGOknURARRPErV8GrM.oMOBv7m2PZnubXO', 45),
-(7, 'Ricardo', 'ricardohenriquevt@gmail.com', '$2y$10$WsXdI.6bkWCndkCgOWHBKuTt2U.vadAkXkBcvsc8uFJ6GWc1LGnia', 46),
-(8, 'aaaa', 'ricardohenriquevt@gmail.com', '$2y$10$5AnQWo5H4yHqaSS7P8yDjeB9N8Xp4LTnuxT9gPM8yrWNXd5HLrqMC', 47),
-(9, 'a', 'ricardohenrique@sescpr.coc.com.br', '$2y$10$taafHQLtYR7RN2xpXLMfgOEaNDL9PruhRKldbufUkr1kvtFTouJsW', 48),
-(10, 'Super Tomcat', 'supertomcat21@protonmail.com', '$2y$10$mdAKPNsmf/2AW2uGQInlu.y51dri2088BzwDeiJ/EX7OxhB.hUmyy', 49),
-(11, 'e', 'a@a.com', '$2y$10$28XPIEUeFhO8aan5i.Soku3dj0CJQxqkD7XLMMxY42NXomAp0yeE6', 50),
-(12, 'e', 'a@a.com', '$2y$10$tNz.2aXkWfo4uRV.aV0WDebCWHI2ERloOU5ZYMl76uNYYcYmWTJFK', 51);
 
 --
 -- Índices para tabelas despejadas
@@ -132,19 +93,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `code`
 --
 ALTER TABLE `code`
-  MODIFY `codeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `codeID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `pessoaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `pessoaID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para tabelas despejadas
